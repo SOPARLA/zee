@@ -75,7 +75,7 @@
         
             python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us" -fs 404,403,401 -cl 500 -hm head
 
-# CONFIG EXAMPLE
+# CONFIG
     [main] # ( PLEASE SPECIFY A SECTION NAME LIKE "main" OR ANYTHING YOU WANT )
     timeout = 10
     threads = 30
