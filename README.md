@@ -1,4 +1,4 @@
-<img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="100%">
+<img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="80px">
 
 Tables
 ------------
