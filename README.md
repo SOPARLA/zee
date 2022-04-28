@@ -1,11 +1,11 @@
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
 
-# *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
+## *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
 
 ![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
 ------------
 
-Tables
+# Tables
 ------------
 - [INSTALLATION](https://github.com/SOPARLA/zee#INSTALLATION)
     - [ZEE](https://github.com/SOPARLA/zee#ZEE)
@@ -28,7 +28,7 @@ Tables
 
 # USAGE
 
-## COMMANDS
+### COMMANDS
     ZEE OPTIONS:
         -u URL                TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/
                               ( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTEFORCE )
@@ -54,7 +54,7 @@ Tables
         -od ADVANCED_SAVE     SAVE THE RESULTS ADVANCED OUTPUT eg. -od res.txt ( ONLY TXT FILES )
         -nc                   DON'T COLORIZE OUTPUT ( DEFAULT: False )
         -silent               ONLY SHOW'S THE RESULTS ( DEFAULT: False )
-## EXAMPLES
+### EXAMPLES
         DEFAULT ( IT EMPLOYS THE TOOL CONFIGURATION FILE DEFAULT ARGUMENT ).
 
             python zee.py -u https://ZEE.domain.com
@@ -76,4 +76,12 @@ Tables
             python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us" -fs 404,403,401 -cl 500 -hm head
 
 # CONFIG EXAMPLE
-        test
+    [main] # ( PLEASE SPECIFY A SECTION NAME LIKE "main" OR ANYTHING YOU WANT )
+    timeout = 10
+    threads = 30
+    headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"}
+    http_method = get
+    filter_status = 404,403
+    silent = False
+    dont_colorize = False
+    output = Out.txt
