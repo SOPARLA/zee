@@ -1,5 +1,8 @@
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
 
+ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
+------------
+
 Tables
 ------------
 - [INSTALLATION](https://github.com/SOPARLA/zee#INSTALLATION)
