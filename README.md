@@ -26,7 +26,7 @@ Tables
 ### COMMANDS
     ZEE OPTIONS:
         -u URL                TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/
-                                ( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTE FORCE )
+                              ( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTE FORCE )
 
         -w WORDLIST           WORDLIST PATH eg. -w path\subdomains.txt ( DEFAULT: SECLIST-20000 )
         -t THREAD             NUMBER OF THREADS ( DEFAULT: 20 )
