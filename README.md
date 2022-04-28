@@ -2,7 +2,7 @@
 
 ## *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
 
-![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
+![py](https://img.shields.io/badge/WRITTEN-PYTHON-blue)
 ![Version](https://img.shields.io/badge/VERSION-1.0-red)
 ------------
 
