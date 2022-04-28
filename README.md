@@ -3,6 +3,7 @@
 ## *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
 
 ![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
+![Version](https://img.shields.io/badge/VERSION-1.0-red)
 ------------
 
 # Tables
@@ -11,7 +12,7 @@
     - [ZEE](https://github.com/SOPARLA/zee#ZEE)
     - [REQUIREMENTS](https://github.com/SOPARLA/zee#requirements)
 - [EXAMPLE USAGE](https://github.com/SOPARLA/zee#USAGE)
-    - [COMMANDS](https://github.com/SOPARLA/zee#COMMANDS)
+    - [ARGS](https://github.com/SOPARLA/zee#ARGS)
     - [EXAMPLES](https://github.com/SOPARLA/zee#examples)
 - [CONFIG FILE](https://github.com/SOPARLA/zee#CONFIG)
 - [NEW FEATURES](https://github.com/SOPARLA/zee#soon)
@@ -28,7 +29,7 @@
 
 # USAGE
 
-### COMMANDS
+### ARGS
     ZEE OPTIONS:
         -u URL                TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/
                               ( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTEFORCE )
