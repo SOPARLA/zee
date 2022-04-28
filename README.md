@@ -1,4 +1,4 @@
-<span style="color:green;font-weight:700;font-size:20px">
+<span style="color:green;font-weight:700;font-size:200px">
     ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
 </span>
 
