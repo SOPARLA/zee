@@ -6,8 +6,8 @@ Tables
     - [ZEE](https://github.com/SOPARLA/zee#ZEE)
     - [REQUIREMENTS](https://github.com/SOPARLA/zee#requirements)
 - [EXAMPLE USAGE](https://github.com/SOPARLA/zee#USAGE)
-    - [COMMANDS](https://github.com/SOPARLAzee#COMMANDS)
-    - [RUN WITH DEFAULT ARGUMENTS](https://github.com/SOPARLA/zee#DEFAULT)
+    - [COMMANDS](https://github.com/SOPARLA/zee#COMMANDS)
+    - [EXAMPLES](https://github.com/SOPARLA/zee#example)
 - [CONFIG FILE](https://github.com/SOPARLA/zee#CONFIG)
 - [COMING FEATURES](https://github.com/SOPARLA/zee#soon)
 
@@ -49,7 +49,7 @@ Tables
         -od ADVANCED_SAVE     SAVE THE RESULTS ADVANCED OUTPUT eg. -od res.txt ( ONLY TXT FILES )
         -nc                   DON'T COLORIZE OUTPUT ( DEFAULT: False )
         -silent               ONLY SHOW'S THE RESULTS ( DEFAULT: False )
-### DEFAULT
+### EXAMPLES
         DEFAULT ( IT EMPLOYS THE TOOL CONFIGURATION FILE DEFAULT ARGUMENT ).
                 python zee.py -u https://ZEE.domain.com
 
