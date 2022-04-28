@@ -2,7 +2,7 @@ import sys
 from colorama import Fore,init
 from src.wrapper import argumants
 from src.zee import check_args
-
+import os
 init(autoreset=True)
 
 args = argumants.get_args()[0]
