@@ -1,4 +1,4 @@
-<img src="src/wrapper/STATIC/banner.gif" alt="GIF" width="100%">
+<img src="src/wrapper/STATIC/banner.gif" alt="GIF" width="80%">
 
 Tables
 ------------
