@@ -1,6 +1,10 @@
+ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
 
-ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
+![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
+![License](https://img.shields.io/badge/license-GNU_General_Public_License-_red.svg)
+![Release](https://img.shields.io/github/release/maurosoria/dirsearch.svg)
+![Stars](https://img.shields.io/github/stars/maurosoria/dirsearch.svg)
 ------------
 
 Tables
@@ -17,16 +21,16 @@ Tables
 
 ## INSTALLATION
 
-### ZEE
+#### ZEE
 - git: `git clone https://github.com/SOPARLA/zee.git`
 - zip: [Download here](https://github.com/SOPARLA/zee/archive/master.zip)
-### REQUIREMENTS
+#### REQUIREMENTS
     python 3 or higher
     pip install -r requirements.txt
 
 ## USAGE
 
-### COMMANDS
+#### COMMANDS
     ZEE OPTIONS:
         -u URL                TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/
                               ( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTEFORCE )
@@ -52,7 +56,7 @@ Tables
         -od ADVANCED_SAVE     SAVE THE RESULTS ADVANCED OUTPUT eg. -od res.txt ( ONLY TXT FILES )
         -nc                   DON'T COLORIZE OUTPUT ( DEFAULT: False )
         -silent               ONLY SHOW'S THE RESULTS ( DEFAULT: False )
-### EXAMPLES
+#### EXAMPLES
         DEFAULT ( IT EMPLOYS THE TOOL CONFIGURATION FILE DEFAULT ARGUMENT ).
 
             python zee.py -u https://ZEE.domain.com
