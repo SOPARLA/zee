@@ -60,10 +60,12 @@ Tables
 
         ENUMRATE SUBDOMAINS FROM WORDLIST WITH 100 THREADS AND 5 SECONDS TIMEOUT
         DON'T COLORIZE THE OUTPUT ( YOU CAN CHANGE THE AMOUNT OF ARGUMANTS ).
-        
+
             python zee.py -u https://ZEE.domain.com -w subdomains.txt -t 100 -timeout 5 -nc
 
-        FILTER RESPONSE STATUS CODES 404,403,401 WITH -fs OPTION, FILTER RESPONSE PAGE LENGTH TILL 500 WITH -cl OPTION
+        FILTER RESPONSE STATUS CODES 404,403,401 WITH -fs OPTION
+        FILTER RESPONSE PAGE LENGTH TILL 500 WITH -cl OPTION
         SEND REQUESTS WITH THE HEAD HTTP METHOD WITH -hm OPTION, SETTING THE REQUEST HEADERS WITH -header
         ( YOU CAN CHANGE THE AMOUNT OF ARGUMANTS ).
-        python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us"
+        
+        python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us" -fs 404,403,401 -cl 500 -hm head
