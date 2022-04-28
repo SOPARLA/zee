@@ -1,5 +1,5 @@
-![](https://github.com/SOPARLA/zee/blob/master/src/wrapper/STATIC/banner.gif)
-
+<!-- ![](https://github.com/SOPARLA/zee/blob/master/src/wrapper/STATIC/banner.gif) -->
+<img src="wrapper/STATIC/banner.gif" alt="GIF" width="800px">
 Tables
 ------------
 - [INSTALLATION](https://github.com/SOPARLA/zee#INSTALLATION)
