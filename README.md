@@ -1,11 +1,8 @@
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
 
-# *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
+## *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
 
 ![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
-![License](https://img.shields.io/badge/license-GNU_General_Public_License-_red.svg)
-![Release](https://img.shields.io/github/release/maurosoria/dirsearch.svg)
-![Stars](https://img.shields.io/github/stars/maurosoria/dirsearch.svg)
 ------------
 
 Tables
