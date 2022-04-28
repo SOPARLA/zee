@@ -1,6 +1,6 @@
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
 
-ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
+- ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
 ------------
 
 Tables
