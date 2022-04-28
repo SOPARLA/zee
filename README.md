@@ -1,4 +1,4 @@
-![](src/wrapper/STATIC/banner.gif)
+<img src="src/wrapper/STATIC/banner.gif" alt="GIF" width="50%">
 
 Tables
 ------------
