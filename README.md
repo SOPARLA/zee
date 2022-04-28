@@ -1,4 +1,4 @@
-ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE
+*ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
 
 ![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
@@ -16,7 +16,7 @@ Tables
     - [COMMANDS](https://github.com/SOPARLA/zee#COMMANDS)
     - [EXAMPLES](https://github.com/SOPARLA/zee#examples)
 - [CONFIG FILE](https://github.com/SOPARLA/zee#CONFIG)
-- [COMING FEATURES](https://github.com/SOPARLA/zee#soon)
+- [NEW FEATURES](https://github.com/SOPARLA/zee#soon)
 
 
 ## INSTALLATION
@@ -76,3 +76,6 @@ Tables
         ( YOU CAN CHANGE THE AMOUNT OF ARGUMANTS ).
         
             python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us" -fs 404,403,401 -cl 500 -hm head
+
+## CONFIG EXAMPLE
+        test
