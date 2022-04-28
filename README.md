@@ -7,7 +7,7 @@ Tables
     - [REQUIREMENTS](https://github.com/SOPARLA/zee#requirements)
 - [EXAMPLE USAGE](https://github.com/SOPARLA/zee#USAGE)
     - [COMMANDS](https://github.com/SOPARLA/zee#COMMANDS)
-    - [EXAMPLES](https://github.com/SOPARLA/zee#example)
+    - [EXAMPLES](https://github.com/SOPARLA/zee#examples)
 - [CONFIG FILE](https://github.com/SOPARLA/zee#CONFIG)
 - [COMING FEATURES](https://github.com/SOPARLA/zee#soon)
 
@@ -51,14 +51,17 @@ Tables
         -silent               ONLY SHOW'S THE RESULTS ( DEFAULT: False )
 ### EXAMPLES
         DEFAULT ( IT EMPLOYS THE TOOL CONFIGURATION FILE DEFAULT ARGUMENT ).
-                python zee.py -u https://ZEE.domain.com
+
+            python zee.py -u https://ZEE.domain.com
 
         CONFIG FILE ( YOU CAN SPECIFY YOUR OWN CONFIG FILE ).
-                python zee.py -u https://ZEE.domain.com -config config_file.ini
+
+            python zee.py -u https://ZEE.domain.com -config config_file.ini
 
         ENUMRATE SUBDOMAINS FROM WORDLIST WITH 100 THREADS AND 5 SECONDS TIMEOUT
         DON'T COLORIZE THE OUTPUT ( YOU CAN CHANGE THE AMOUNT OF ARGUMANTS ).
-                python zee.py -u https://ZEE.domain.com -w subdomains.txt -t 100 -timeout 5 -nc
+        
+            python zee.py -u https://ZEE.domain.com -w subdomains.txt -t 100 -timeout 5 -nc
 
         FILTER RESPONSE STATUS CODES 404,403,401 WITH -fs OPTION, FILTER RESPONSE PAGE LENGTH TILL 500 WITH -cl OPTION
         SEND REQUESTS WITH THE HEAD HTTP METHOD WITH -hm OPTION, SETTING THE REQUEST HEADERS WITH -header
