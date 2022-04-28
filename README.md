@@ -1,12 +1,6 @@
-<style>
-    span{
-        font-size: 200px;
-        color: cyan;
-    }
-</style>
-<span>ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE</span>
-
 <img src="src/wrapper/STATIC/ZEE.png" alt="banner" width="70%">
+
+# *ZEE IS A PYTHON WRITTEN SUBDOMAIN BRUTEFORCE*
 
 ![Build](https://img.shields.io/badge/Built%20with-Python-Blue)
 ![License](https://img.shields.io/badge/license-GNU_General_Public_License-_red.svg)
