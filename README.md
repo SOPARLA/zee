@@ -1,11 +1,4 @@
-```
-███████╗ ███████╗  ███████╗
-╚════██║ ██╔════╝  ██╔════╝
-░░███╔═╝ █████╗░░  █████╗░░
-██╔══╝░░ ██╔══╝░░  ██╔══╝░░
-███████╗ ███████╗  ███████╗
-╚══════╝ ╚══════╝  ╚══════╝
-```
+![](https://github.com/SOPARLA/zee/blob/master/src/wrapper/STATIC/banner.gif)
 
 Tables
 ------------
@@ -28,7 +21,6 @@ Tables
     pip install -r requirements.txt
 
 ## USAGE
-
+![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
 ### DEFAULT
     python zee.py -
-    test
