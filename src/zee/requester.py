@@ -14,7 +14,7 @@ def send_request(url,header,timeout,http_method):
             find = soup.find("div",{"class":"col col_12_of_12"})
             asn = re.findall("ASN : (.*)",find.text)
 
-            return ip,asn[0]
+            return [ip,asn[0]]
     
         send_req = requests.request(url=str(url),verify=False,method=http_method,timeout=timeout,headers=header,allow_redirects=False)
         det = get_ip_asn(url)
