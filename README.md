@@ -18,8 +18,8 @@
 - [EXAMPLE USAGE](https://github.com/SOPARLA/zee#USAGE)
     - [ARGS](https://github.com/SOPARLA/zee#ARGS)
     - [EXAMPLES](https://github.com/SOPARLA/zee#examples)
-- [CONFIG FILE](https://github.com/SOPARLA/zee#CONFIG)
-- [NEW FEATURES](https://github.com/SOPARLA/zee#soon)
+- [CONFIGURATION FILE](https://github.com/SOPARLA/zee#CONFIG)
+- [FEATURES](https://github.com/SOPARLA/zee#soon)
 
 
 # INSTALLATION
@@ -104,3 +104,9 @@ silent = False
 dont_colorize = False
 output = Out.txt
 ```
+
+# COMMING FEATURES
+
+
+- PASSIVE MODE
+    - TEST
