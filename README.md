@@ -4,11 +4,13 @@
 
 ![py](https://img.shields.io/badge/WRITTEN%20IN-PYTHON-blue)
 ![Version](https://img.shields.io/badge/VERSION-1.0-red)
-<a href="mailto:bosshbz84@gmail.com">![contact](https://img.shields.io/badge/EMAIL-white?logo=gmail)</a>
+<a href="mailto:bosshbz84@gmail.com">
+    ![contact](https://img.shields.io/badge/EMAIL-white?logo=gmail)
+</a>
 
 ------------
 
-# Tables
+# TABELS
 
 - [INSTALLATION](https://github.com/SOPARLA/zee#INSTALLATION)
     - [ZEE](https://github.com/SOPARLA/zee#ZEE)
@@ -37,7 +39,7 @@ pip install -r requirements.txt
 ------------
 
 ### ARGS
-``` 
+```
 ZEE OPTIONS:
     -u URL                TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/
                             ( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTEFORCE )
@@ -67,7 +69,8 @@ OUTPUT:
 
 ### EXAMPLES
 
-```DEFAULT ( IT EMPLOYS THE TOOL CONFIGURATION FILE DEFAULT ARGUMENT ).
+```
+DEFAULT ( IT EMPLOYS THE TOOL CONFIGURATION FILE DEFAULT ARGUMENT ).
 
     python zee.py -u https://ZEE.domain.com
 
@@ -88,7 +91,8 @@ SEND REQUESTS WITH THE HEAD HTTP METHOD WITH -hm OPTION, SETTING THE REQUEST HEA
     python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us" -fs 404,403,401 -cl 500 -hm head
 ```
 
-# CONFIG
+# CONFIGURATION FILE
+
 ```ini
 [main] # ( PLEASE SPECIFY A SECTION NAME LIKE "main" OR ANYTHING YOU WANT )
 timeout = 10
