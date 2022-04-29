@@ -105,19 +105,6 @@ dont_colorize = False
 output = Out.txt
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # COMMING FEATURES
 ------------
 ```
