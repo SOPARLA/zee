@@ -25,4 +25,6 @@ else:
 if args.configfile:
     if not str(args.configfile).lower().endswith(".ini"):
         sys.exit(Fore.RED+f"\n[ERROR] WRONG FILE EXTENSION\nPLEASE PROVED ONLY INI FILES\n")
+
+# CHECK THE USER ARGUMANTS
 check_args.check(args.wordlist,args.URL,args.configfile,args.header,args.filterstatus,args.httpmethod,args.timeout,args.filterlength,args.thread,args.silent,args.color,out)
