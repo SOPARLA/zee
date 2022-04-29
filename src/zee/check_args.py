@@ -20,6 +20,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
             "colorize":colorize,
             "output":output
             }
+
     # CHECK THE ZEE WORD AND HTTP
     if not("https://" in url or "http://" in url):
         sys.exit(Fore.RED+"\n\n[ERROR] HTTP MISSING\n\teg. https://zee.domain.com")
@@ -201,5 +202,5 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
     
     if not args['silent']:
         os.system("cls")
-        banner.main(url,word_list,word_list_len,args["http_method"],filtered_status,args['timeout'],args["filter_length"],args["threads"],args["colorize"])
+        banner.main(url,args["wordlist"],word_list_len,args["http_method"],args["filter_status"],args['timeout'],args["filter_length"],args["threads"],args["colorize"])
     main(args)
