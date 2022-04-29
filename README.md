@@ -81,15 +81,14 @@
             python zee.py -u https://zee.domain.com -header "User-Agent: etc|content-type: text/html|Accept-Language: en-Us" -fs 404,403,401 -cl 500 -hm head
 
 # CONFIG
-
-    ```ini
-        [main] # ( PLEASE SPECIFY A SECTION NAME LIKE "main" OR ANYTHING YOU WANT )
-        timeout = 10
-        threads = 30
-        headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"  ,"Accept-Language": "*","Accept-Encoding": "*","Accept":"text/html","Referer":"https://www.google.com"}
-        http_method = get
-        filter_status = 404,403
-        silent = False
-        dont_colorize = False
-        output = Out.txt
-    ```
+```
+[main] # ( PLEASE SPECIFY A SECTION NAME LIKE "main" OR ANYTHING YOU WANT )
+timeout = 10
+threads = 30
+headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"  ,"Accept-Language": "*","Accept-Encoding": "*","Accept":"text/html","Referer":"https://www.google.com"}
+http_method = get
+filter_status = 404,403
+silent = False
+dont_colorize = False
+output = Out.txt
+```
