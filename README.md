@@ -7,7 +7,6 @@
 ------------
 
 # Tables
-<!-- ------------ -->
 
 - [INSTALLATION](https://github.com/SOPARLA/zee#INSTALLATION)
     - [ZEE](https://github.com/SOPARLA/zee#ZEE)
@@ -20,6 +19,7 @@
 
 
 # INSTALLATION
+------------
 
 ## ZEE
 - git: `git clone https://github.com/SOPARLA/zee.git`
@@ -29,6 +29,7 @@
     pip install -r requirements.txt
 
 # USAGE
+------------
 
 ### ARGS
     ZEE OPTIONS:
