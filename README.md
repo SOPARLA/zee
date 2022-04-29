@@ -22,8 +22,8 @@
 ------------
 
 ## ZEE
-    git: `git clone https://github.com/SOPARLA/zee.git`
-    zip: [Download here](https://github.com/SOPARLA/zee/archive/master.zip)
+git: `git clone https://github.com/SOPARLA/zee.git`
+zip: [Download here](https://github.com/SOPARLA/zee/archive/master.zip)
 ## REQUIREMENTS
     python 3 or higher
     pip install -r requirements.txt
