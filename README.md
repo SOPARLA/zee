@@ -7,7 +7,8 @@
 ------------
 
 # Tables
-------------
+<!-- ------------ -->
+
 - [INSTALLATION](https://github.com/SOPARLA/zee#INSTALLATION)
     - [ZEE](https://github.com/SOPARLA/zee#ZEE)
     - [REQUIREMENTS](https://github.com/SOPARLA/zee#requirements)
