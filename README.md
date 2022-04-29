@@ -92,7 +92,7 @@ SEND REQUESTS WITH THE HEAD HTTP METHOD WITH -hm OPTION, SETTING THE REQUEST HEA
 ```
 
 # CONFIGURATION FILE
-
+------------
 ```ini
 [main] # ( PLEASE SPECIFY A SECTION NAME LIKE "main" OR ANYTHING YOU WANT )
 timeout = 10
@@ -105,7 +105,21 @@ dont_colorize = False
 output = Out.txt
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 # COMMING FEATURES
+------------
 ```
 - PASSIVE MODE ( NEW FEATURE ) 
     - MORE THAN 20 PROVIDER FOR SUBDOMAIN ENUMERATION
