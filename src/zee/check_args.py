@@ -8,8 +8,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
 
     word_list_len = ""
     filtered_status = []
-    
-    args = {"wordlist":"src\\utils\\wordlists\\seclist-20000.txt",
+    args = {"wordlist":word_list,
             "timeout":timeout,
             "threads":thread,
             "headers":{"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"  ,"Accept-Language": "*","Accept-Encoding": "*","Accept":"text/html","Referer":"https://www.google.com"},
@@ -202,5 +201,5 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
     
     if not args['silent']:
         os.system("cls")
-        banner.main(url,args["wordlist"],word_list_len,args["http_method"],args["filter_status"],args['timeout'],args["filter_length"],args["threads"],args["colorize"])
+        banner.main(url,word_list,word_list_len,args["http_method"],args["filter_status"],args['timeout'],args["filter_length"],args["threads"],args["colorize"])
     main(args)

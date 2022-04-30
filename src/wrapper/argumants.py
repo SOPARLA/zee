@@ -2,6 +2,7 @@ import argparse,sys
 from argparse import SUPPRESS
 from argparse import RawTextHelpFormatter
 from colorama import Fore
+import defusedxml
 
 def get_args():
     parser = argparse.ArgumentParser(usage=SUPPRESS,formatter_class=RawTextHelpFormatter,exit_on_error=False,add_help=False,description=Fore.CYAN+f"")
@@ -14,7 +15,7 @@ def get_args():
     op_com = parser.add_argument_group('OUTPUT')
 
     tl_com.add_argument("-u",type=str,dest="URL",help="TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/\n( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTE FORCE )\n\n")
-    tl_com.add_argument("-w",dest="wordlist",help="WORDLIST PATH eg. -w path\\subdomains.txt ( DEFAULT: SECLIST-20000 )")
+    tl_com.add_argument("-w",dest="wordlist",default="src\\utils\\wordlists\\seclist-20000.txt",help="WORDLIST PATH eg. -w path\\subdomains.txt ( DEFAULT: SECLIST-20000 )")
     tl_com.add_argument("-t",default=20,type=int,dest="thread",help="NUMBER OF THREADS ( DEFAULT: 20 )")
     tl_com.add_argument("-config",dest="configfile",help="CONFIG FILE eg. -config config.ini")
     tl_com.add_argument("-v",action='store_true',dest="toolversion",help="TOOL VERSION")
