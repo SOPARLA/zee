@@ -40,7 +40,7 @@ def main(arguments):
                 sys.stdout.write(f"\x1b[K{url:<26}[ Status: {status_code:<5} | Length: {page_length:<10} | IP: {ip:<15} | asn: {asn:<5} ]\n")
         
         # EXIT FUNCTION
-        def shut():
+        def ex():
             pid = os.getpid()
             os.kill(pid, 9)
         
@@ -114,8 +114,8 @@ def main(arguments):
                     executor.shutdown(wait=False,cancel_futures=True)
                     print(Fore.RED+"\n\nPROGRAM HAS BEEN CLOSED")
                     if not len(results) == 0:
-                        save(file_name=output,results=results)
-                    shut()
+                        save(file_name=str(output).split(":")[0],results=results)
+                    ex()
                 signal.signal(signal.SIGINT, sig)
                 
                 if len(line) == len(subdomains):
@@ -139,5 +139,5 @@ def main(arguments):
         executor.shutdown(wait=False,cancel_futures=True)
         print(Fore.RED+"\n\nPROGRAM HAS BEEN CLOSED")
         if not len(results) == 0:
-            save(file_name=output,results=results)
-        shut()
+            save(file_name=str(output).split(":")[0],results=results)
+        ex()
