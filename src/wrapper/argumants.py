@@ -10,11 +10,10 @@ def get_args():
     tl_com = parser.add_argument_group('ZEE OPTIONS')
     hp_com = parser.add_argument_group('HTTP OPTIONS')
     fl_com = parser.add_argument_group('FILTER')
-    opt_com = parser.add_argument_group('OPTIONAL')
     op_com = parser.add_argument_group('OUTPUT')
 
     tl_com.add_argument("-u",required=True,type=str,dest="URL",help="TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/\n( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTE FORCE )\n\n")
-    tl_com.add_argument("-w",dest="wordlist",default="src\\utils\\wordlists\\seclist-20000.txt",help="WORDLIST PATH eg. -w path\\subdomains.txt ( DEFAULT: SECLIST-20000 )")
+    tl_com.add_argument("-w",dest="wordlist",default="src/utils/wordlists/seclist-20000.txt",help="WORDLIST PATH eg. -w path/subdomains.txt ( DEFAULT: SECLIST-20000 )")
     tl_com.add_argument("-t",default=20,type=int,dest="thread",help="NUMBER OF THREADS ( DEFAULT: 20 )")
     tl_com.add_argument("-config",dest="configfile",help="CONFIG FILE eg. -config config.ini")
     tl_com.add_argument("-v",action='store_true',dest="toolversion",help="TOOL VERSION")

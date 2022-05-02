@@ -1,4 +1,4 @@
-import sys,os,io,email,json
+import sys,os,io,email,json,platform
 from colorama import Fore
 from .main import main
 from src.wrapper import banner
@@ -200,6 +200,13 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
             args.update({"filter_status":filtered_status})
     
     if not args['silent']:
-        os.system("cls")
+        opt = platform.system().lower()
+        if opt == "windows":
+            os.system("cls")
+        elif opt == "linux":
+            os.system("clear")
+        else:
+            os.system("clear")    
         banner.main(url,word_list,word_list_len,args["http_method"],args["filter_status"],args['timeout'],args["filter_length"],args["threads"],args["colorize"])
+    
     main(args)
