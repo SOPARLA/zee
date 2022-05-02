@@ -1,4 +1,7 @@
-import sys,signal,os
+import sys,signal
+from platform import system
+from subprocess import getoutput
+from os import getpid,kill
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import ALL_COMPLETED as COMPLETED
 from colorama import Fore
@@ -41,9 +44,15 @@ def main(arguments):
         
         # EXIT FUNCTION
         def ex():
-            pid = os.getpid()
-            os.kill(pid, 9)
-        
+            opt = system().lower()
+            pid = getpid()
+            if opt == "windows":
+                getoutput(f"taskkill /T /F /PID {pid}")
+            elif opt == "linux":
+                getoutput(f"pkill -n -x -i -u {pid}")
+            else:
+                kill(pid,9)
+
         # MAIN PART
         def run(url):
 
