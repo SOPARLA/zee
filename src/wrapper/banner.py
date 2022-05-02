@@ -1,4 +1,3 @@
-import ctypes
 from colorama import Fore
 from tldextract import extract
 
@@ -30,10 +29,8 @@ def main(TARGET,wordlist,wordlist_len,http_method,status_code,tout,length,thread
     ex = extract(TARGET)
     TARGET = f"{ex.domain}.{ex.suffix}"
     if dont_colorize:
-        ctypes.windll.kernel32.SetConsoleTitleW('ZEE')
         ncbanner()
         print(f"\n   [*] TARGET\t\t : {TARGET}\n   [*] THREADS\t\t : {thread_count}\n   [*] TIMEOUT\t\t : {tout}\n   [*] WORDLIST\t\t : {wordlist}\n   [*] SUBDOMAINS\t : {wordlist_len}\n   [*] FILTERD CODES\t : {status_code}\n   [*] FILTERD LENGTH\t : {length}\n   [*] REQUEST METHOD\t : {http_method}\n\n")
     else:
-        ctypes.windll.kernel32.SetConsoleTitleW('ZEE')
         banner()
         print(f"\n   {Fore.RED}[*] {Fore.CYAN}TARGET\t\t : {TARGET}\n   {Fore.RED}[*] {Fore.CYAN}THREADS\t\t : {thread_count}\n   {Fore.RED}[*] {Fore.CYAN}TIMEOUT\t\t : {tout}\n   {Fore.RED}[*] {Fore.CYAN}WORDLIST\t\t : {wordlist}\n   {Fore.RED}[*] {Fore.CYAN}SUBDOMAINS\t : {wordlist_len}\n   {Fore.RED}[*] {Fore.CYAN}FILTERD CODES\t : {status_code}\n   {Fore.RED}[*] {Fore.CYAN}FILTERD LENGTH\t : {length}\n   {Fore.RED}[*] {Fore.CYAN}REQUEST METHOD\t : {http_method}\n\n")
