@@ -1,12 +1,12 @@
 import sys
-from src.wrapper import argumants
-from src.zee import check_args
-
 try:
     from colorama import Fore,init
     init(autoreset=True)
 except ModuleNotFoundError:
     exit("[ERROR] MODULE NOT FOUND\nPLEASE INSTALL colorama MODULE\n\teg. pip install colorama")
+from src.wrapper import argumants
+from src.zee import check_args
+
 
 
 args = argumants.get_args()[0]
