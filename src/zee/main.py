@@ -1,12 +1,10 @@
 import sys,signal,time
-from platform import system
-from subprocess import getoutput
-from os import getpid,kill
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import ALL_COMPLETED as COMPLETED
 from colorama import Fore
 from .save_results import save
 from .requester import send_request
+from .exit import mes,killproc
 
 def main(arguments):
     
@@ -48,17 +46,6 @@ def main(arguments):
                 sys.stdout.write(f"\x1b[K{url:<26}[ Status: {status_code:<5} | Length: {page_length:<10} | IP: {ip:<15} | asn: {asn:<5} ]\n")
                 sys.stdout.flush()
 
-        # EXIT FUNCTION
-        def ex():
-            opt = system().lower()
-            pid = getpid()
-            if opt == "windows":
-                getoutput(f"taskkill /T /F /PID {pid}")
-            elif opt == "linux":
-                getoutput(f"pkill -n -x -i -u {pid}")
-            else:
-                kill(pid,9)
-
         def persec():
             cr = int(ls_time) - int(st_time)
             if cr > 0:
@@ -67,7 +54,7 @@ def main(arguments):
                     rate = int(str(rate).split(".")[0])
             else: rate = 0
             
-            if 0.0 < rate < 1.0: return  (1.0 / rate)
+            if 0 < rate < 1: return  (1.0 / rate)
             else: return rate
 
 
@@ -124,7 +111,7 @@ def main(arguments):
                         if output:
                             arg = str(output).split(":")
                             if arg[1] == "advanced":
-                                results.append(f"{url:<32}[ Status: {req_stcode:<5} | Length: {length:<10} | IP: {ipaddr:<15} | asn: {asn:<5} ]")
+                                results.append(f"{url:<37}[ Status: {req_stcode:<5} | Length: {length:<10} | IP: {ipaddr:<15} | asn: {asn:<5} ]")
                             else:
                                 results.append(str(url))
 
@@ -139,12 +126,12 @@ def main(arguments):
                     global br
                     br = True
                     ok_print = False
-                    
                     executor.shutdown(wait=False,cancel_futures=True)
-                    print(Fore.RED+"\n\nPROGRAM HAS BEEN CLOSED")
+                    
                     if not len(results) == 0:
                         save(file_name=str(output).split(":")[0],results=results)
-                    ex()
+                    time.sleep(0.5)
+                    mes()
                 signal.signal(signal.SIGINT, sig)
                 
                 if len(line) == len(subdomains):
@@ -152,13 +139,13 @@ def main(arguments):
                 
                 if not silent:
                     if ok_print:
-                        sys.stdout.write(f"[ Line: {len(line)}\t/\tTotal: {len(subdomains)}\t/\tREQ PERSEC: {persec()} ]\r")
+                        sys.stdout.write(f"[ Line: {len(line):<10}/\tTotal: {len(subdomains):<10}/\tREQ PERSEC: {persec()} ]\r")
                         sys.stdout.flush()
 
         if COMPLETED:
             if not len(results) == 0:
                 save(file_name=str(output).split(":")[0],results=results)
-            ex()
+            killproc()
     
     except RuntimeError:
         pass
@@ -167,7 +154,7 @@ def main(arguments):
         br = True
         ok_print = False
         executor.shutdown(wait=False,cancel_futures=True)
-        print(Fore.RED+"\n\nPROGRAM HAS BEEN CLOSED")
         if not len(results) == 0:
             save(file_name=str(output).split(":")[0],results=results)
-        ex()
+        time.sleep(0.5)
+        mes()
