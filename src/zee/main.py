@@ -22,6 +22,7 @@ def main(arguments):
     br = False
     st_time = str(time.time()).split(".")[0]
     ls_time = 0
+
     try:
 
 
@@ -76,12 +77,13 @@ def main(arguments):
             line.append(1)
             request = send_request(url=url,header=heads,timeout=timeout,http_method=http_method)
             if not request == "FAILED":
+
                 asn = request[2]
                 ipaddr = request[1]
                 req_stcode  = request[0].status_code
                 req_content = request[0].content
                 req_headers = request[0].headers
-
+                
                 # GET THE PAGE RESPONSE SIZE
                 if 'content-length' in req_headers:
                     length = req_headers['content-length']
@@ -89,6 +91,7 @@ def main(arguments):
                     length = len(req_content)
 
                 if not filtered_status == []:
+                    
                     # COMPARE THE STATUS CODE WITH FILTERED CODES
                     if not req_stcode in filtered_status:
                     
@@ -155,7 +158,7 @@ def main(arguments):
         if COMPLETED:
             if not len(results) == 0:
                 save(file_name=str(output).split(":")[0],results=results)
-            exit()
+            ex()
     
     except RuntimeError:
         pass
