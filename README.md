@@ -105,7 +105,7 @@ dont_colorize = False
 output = Out.txt
 ```
 
-# COMMING FEATURES
+# SOON
 ------------
 ```
 - PASSIVE MODE ( NEW FEATURE ) 
