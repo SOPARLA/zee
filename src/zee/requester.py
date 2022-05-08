@@ -1,5 +1,20 @@
-import urllib3,requests,socket,re
-from bs4 import BeautifulSoup as B
+import socket,re
+
+try:
+    import urllib3
+except ModuleNotFoundError:
+    exit("[ERROR] MODULE NOT FOUND\nPLEASE INSTALL urllib3 MODULE\n\teg. pip install urllib3")
+
+try:
+    from bs4 import BeautifulSoup as B
+except ModuleNotFoundError:
+    exit("[ERROR] MODULE NOT FOUND\nPLEASE INSTALL beautifulsoup4 MODULE\n\teg. pip install beautifulsoup4")
+
+try:
+    import requests
+except ModuleNotFoundError:
+    exit("[ERROR] MODULE NOT FOUND\nPLEASE INSTALL requests MODULE\n\teg. pip install requests")
+
 
 disable_warnings = urllib3.disable_warnings()
 def send_request(url,header,timeout,http_method):

@@ -1,5 +1,9 @@
 from colorama import Fore
-from tldextract import extract
+
+try:
+    from tldextract import extract
+except ModuleNotFoundError:
+    exit("[ERROR] MODULE NOT FOUND\nPLEASE INSTALL tldextract MODULE\n\teg. pip install tldextract")
 
 def banner():
     print()
