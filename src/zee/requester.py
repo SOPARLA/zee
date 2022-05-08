@@ -3,17 +3,17 @@ import socket,re
 try:
     import urllib3
 except ModuleNotFoundError:
-    exit("\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL urllib3 MODULE\n\teg. pip install urllib3\n")
+    exit("\033[91m\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL urllib3 MODULE\n\teg. pip install urllib3\n")
 
 try:
     from bs4 import BeautifulSoup as B
 except ModuleNotFoundError:
-    exit("\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL beautifulsoup4 MODULE\n\teg. pip install beautifulsoup4\n")
+    exit("\033[91m\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL beautifulsoup4 MODULE\n\teg. pip install beautifulsoup4\n")
 
 try:
     import requests
 except ModuleNotFoundError:
-    exit("\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL requests MODULE\n\teg. pip install requests\n")
+    exit("\033[91m\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL requests MODULE\n\teg. pip install requests\n")
 
 
 disable_warnings = urllib3.disable_warnings()

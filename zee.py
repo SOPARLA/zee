@@ -3,7 +3,7 @@ try:
     from colorama import Fore,init
     init(autoreset=True)
 except ModuleNotFoundError:
-    exit("\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL colorama MODULE\n\teg. pip install colorama\n")
+    exit("\033[91m\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL colorama MODULE\n\teg. pip install colorama\n")
 from src.wrapper import argumants
 from src.zee import check_args
 
