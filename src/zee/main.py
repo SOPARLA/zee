@@ -1,4 +1,4 @@
-import sys,signal
+import sys,signal,time
 from platform import system
 from subprocess import getoutput
 from os import getpid,kill
@@ -20,6 +20,8 @@ def main(arguments):
     stop = False
     ok_print = True
     br = False
+    st_time = str(time.time()).split(".")[0]
+    ls_time = 0
     try:
 
 
@@ -45,7 +47,6 @@ def main(arguments):
                 sys.stdout.write(f"\x1b[K{url:<26}[ Status: {status_code:<5} | Length: {page_length:<10} | IP: {ip:<15} | asn: {asn:<5} ]\n")
                 sys.stdout.flush()
 
-
         # EXIT FUNCTION
         def ex():
             opt = system().lower()
@@ -56,6 +57,22 @@ def main(arguments):
                 getoutput(f"pkill -n -x -i -u {pid}")
             else:
                 kill(pid,9)
+
+        def persec():
+            last_time = int(ls_time) - int(st_time)
+            if last_time > 0:
+                rate = len(line) / last_time
+                if "." in str(rate):
+                    rate = int(str(rate).split(".")[0])
+            else: rate = 0
+            
+            if 0.0 < rate < 1.0:
+                rate_fmt = (1.0 / rate)
+            else: 
+                rate_fmt = rate
+            
+            return rate_fmt
+
 
         # MAIN PART
         def run(url):
@@ -116,7 +133,7 @@ def main(arguments):
             executor.map(run,subdomains,timeout=timeout)
             
             while not br:
-                
+                ls_time = str(time.time()).split(".")[0]
                 def sig(signal, frame):
                     
                     global ok_print
@@ -136,7 +153,7 @@ def main(arguments):
                 
                 if not silent:
                     if ok_print:
-                        sys.stdout.write(f"[ Line: {len(line)}\t/\tTotal: {len(subdomains)} ]\r")
+                        sys.stdout.write(f"[ Line: {len(line)}\t/\tTotal: {len(subdomains)}\t/\tREQ PERSEC: {persec()} ]\r")
                         sys.stdout.flush()
 
         if COMPLETED:
