@@ -59,19 +59,15 @@ def main(arguments):
                 kill(pid,9)
 
         def persec():
-            last_time = int(ls_time) - int(st_time)
-            if last_time > 0:
-                rate = len(line) / last_time
+            cr = int(ls_time) - int(st_time)
+            if cr > 0:
+                rate = len(line) / cr
                 if "." in str(rate):
                     rate = int(str(rate).split(".")[0])
             else: rate = 0
             
-            if 0.0 < rate < 1.0:
-                rate_fmt = (1.0 / rate)
-            else: 
-                rate_fmt = rate
-            
-            return rate_fmt
+            if 0.0 < rate < 1.0: return  (1.0 / rate)
+            else: return rate
 
 
         # MAIN PART
