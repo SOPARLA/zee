@@ -33,15 +33,19 @@ def main(arguments):
         silent = arguments['silent']
         output = arguments['output']
 
+
         # PRINT REQUEST RESULTS
         def printout(url,status_code,ip,asn,page_length,page_headers):
             if "https://" in url or "http://" in url:
                 url = str(url).replace("https://","").replace("http://","")
             if str(status_code).startswith("3"):
                 sys.stdout.write(f"\x1b[K{url:<26}[ Status: {status_code:<5} | REDIRECTED: {page_headers['Location']:<5} ]\n")
+                sys.stdout.flush()
             else:
                 sys.stdout.write(f"\x1b[K{url:<26}[ Status: {status_code:<5} | Length: {page_length:<10} | IP: {ip:<15} | asn: {asn:<5} ]\n")
-        
+                sys.stdout.flush()
+
+
         # EXIT FUNCTION
         def ex():
             opt = system().lower()
@@ -133,6 +137,7 @@ def main(arguments):
                 if not silent:
                     if ok_print:
                         sys.stdout.write(f"[ Line: {len(line)}\t/\tTotal: {len(subdomains)} ]\r")
+                        sys.stdout.flush()
 
         if COMPLETED:
             if not len(results) == 0:
