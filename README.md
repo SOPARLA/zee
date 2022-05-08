@@ -19,7 +19,7 @@
     - [ARGS](https://github.com/SOPARLA/zee#ARGS)
     - [EXAMPLES](https://github.com/SOPARLA/zee#examples)
 - [CONFIGURATION FILE](https://github.com/SOPARLA/zee#CONFIG)
-- [COMING SOON](https://github.com/SOPARLA/zee#soon)
+- [COMING SOON](https://github.com/SOPARLA/zee#coming-soon)
 
 
 # INSTALLATION
