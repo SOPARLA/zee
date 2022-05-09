@@ -1,7 +1,6 @@
 import sys,signal,time
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import ALL_COMPLETED as COMPLETED
-from colorama import Fore
 from .save_results import save
 from .requester import send_request
 from .exit import mes,killproc
@@ -18,7 +17,7 @@ def main(arguments):
     stop = False
     ok_print = True
     br = False
-    st_time = str(time.time()).split(".")[0]
+    st_time = time.time()
     ls_time = 0
 
     try:
@@ -47,14 +46,19 @@ def main(arguments):
                 sys.stdout.flush()
 
         def persec():
-            cr = int(ls_time) - int(st_time)
-            if cr > 0:
-                rate = len(line) / cr
+            crt = int(ls_time) - int(st_time)
+            if crt > 0:
+                rate = len(line) / crt
                 if "." in str(rate):
                     rate = int(str(rate).split(".")[0])
             else: rate = 0
             
-            if 0 < rate < 1: return  (1.0 / rate)
+            if 0 < rate < 1: 
+                p = (1 / rate)
+                if "." in str(p):
+                    return int(str(p).split(".")[0])
+                return p
+            
             else: return rate
 
 
@@ -116,10 +120,10 @@ def main(arguments):
                                 results.append(str(url))
 
         with ThreadPoolExecutor(max_workers=int(threads)) as executor:
-            executor.map(run,subdomains,timeout=timeout)
+            executor.map(run,subdomains)
             
             while not br:
-                ls_time = str(time.time()).split(".")[0]
+                ls_time = time.time()
                 def sig(signal, frame):
                     
                     global ok_print
@@ -139,7 +143,7 @@ def main(arguments):
                 
                 if not silent:
                     if ok_print:
-                        sys.stdout.write(f"[ Line: {len(line):<10}/\tTotal: {len(subdomains):<10}/\tREQ PERSEC: {persec()} ]\r")
+                        sys.stdout.write(f"[   Line: {len(line):<10}/\tTotal: {len(subdomains):<10}/\tREQ PERSEC: {persec():<3} ]\r")
                         sys.stdout.flush()
 
         if COMPLETED:

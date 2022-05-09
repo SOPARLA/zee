@@ -8,7 +8,6 @@ from src.wrapper import argumants
 from src.zee import check_args
 
 
-
 args = argumants.get_args()[0]
 
 if args.toolversion:
