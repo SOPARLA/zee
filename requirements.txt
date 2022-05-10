@@ -1,4 +1,4 @@
 urllib3
 requests
-colorama
+coloram
 beautifulsoup4
