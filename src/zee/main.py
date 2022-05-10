@@ -6,17 +6,9 @@ from .requester import send_request
 from .exit import mes,killproc
 
 def main(arguments):
-    
-    global stop
-    global ok_print
-    global results
-    global line
-    global br
-    line = []
-    results = []
-    stop = False
-    ok_print = True
-    br = False
+    global stop,ok_print,results,line,br
+    results,line = [],[]
+    stop,ok_print,br = False,True,False
     st_time = time.time()
     ls_time = 0
 
@@ -120,16 +112,14 @@ def main(arguments):
                                 results.append(str(url))
 
         with ThreadPoolExecutor(max_workers=int(threads)) as executor:
-            executor.map(run,subdomains)
+            executor.map(run,subdomains,timeout=int(timeout))
             
             while not br:
                 ls_time = time.time()
                 def sig(signal, frame):
                     
-                    global ok_print
-                    global br
-                    br = True
-                    ok_print = False
+                    global ok_print,br
+                    br,ok_print = True,False
                     executor.shutdown(wait=False,cancel_futures=True)
                     
                     if not len(results) == 0:
