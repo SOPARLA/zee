@@ -1,9 +1,13 @@
-import sys,signal,time
+# sys library for writing output to the terminal
+# signal library for identity when client press the ctrl+c and terminate the tool with terminate_tool function in exit file
+# time library for setting timeout before running the terminate_tool and time. time() to calculate how many requests are sent in a second.
+# concurrent.futures library to make tools faster.
+import sys,signal,time 
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import ALL_COMPLETED as COMPLETED
 from .save_results import save
 from .requester import send_request
-from .exit import mes,killproc
+from .exit import closed_message,terminate_tool
 
 def main(arguments):
     global stop,ok_print,results,line,br
@@ -14,7 +18,7 @@ def main(arguments):
 
     try:
 
-
+        # Arguments entered by the user and tool default arguments
         subdomains = arguments['wordlist']
         heads = arguments['headers']
         timeout = arguments['timeout']
@@ -37,6 +41,7 @@ def main(arguments):
                 sys.stdout.write(f"\x1b[K{url:<26}[ Status: {status_code:<5} | Length: {page_length:<10} | IP: {ip:<15} | asn: {asn:<5} ]\n")
                 sys.stdout.flush()
 
+        # The persec function is used to calculate the number of requests sent in the last second.
         def persec():
             crt = int(ls_time) - int(st_time)
             if crt > 0:
@@ -56,9 +61,13 @@ def main(arguments):
 
         # MAIN PART
         def run(url):
-
+            
             line.append(1)
+        
+            # Send request
             request = send_request(url=url,header=heads,timeout=timeout,http_method=http_method)
+            
+            # Check The response from the send_request function
             if not request == "FAILED":
 
                 asn = request[2]
@@ -75,45 +84,53 @@ def main(arguments):
 
                 if not filtered_status == []:
                     
-                    # COMPARE THE STATUS CODE WITH FILTERED CODES
+                    # Compare the Response Status Code with Filtered Codes.
                     if not req_stcode in filtered_status:
                     
-                        # COMPARE THE RESPONSE LENGTH WITH FILTERED LENGTHS
+                        # COMPARE THE LENGTH OF THE RESPONSE WITH FILTERED LENGTHS
                         if filter_length <= int(length):
                             
                             if ok_print:
                                 if not silent: 
+                                    # print the results in terminal with printout function
                                     printout(url=url,status_code=req_stcode,ip=ipaddr,asn=asn,page_length=length,page_headers=req_headers)
                                 else: 
+                                    # print only the url with the write function in the sys library.
                                     sys.stdout.write(f"\x1b[K{url}\n")
                             
                             if output:
                                 arg = str(output).split(":")
+                                # If the client sets the output option to advanced, saving the asn and ip too
                                 if arg[1] == "advanced":
                                     results.append(f"{url:<26}[ Status: {req_stcode:<5} | Length: {length:<10} | IP: {ipaddr:<15} | asn: {asn:<5} ]")
                                 else:
+                                    # If the client sets the output option to simple, only save the url
                                     results.append(str(url))
 
                 else:
-
-                    # COMPARE THE RESPONSE LENGTH WITH FILTERED LENGTHS
+                    # COMPARE THE LENGTH OF THE RESPONSE WITH FILTERED LENGTHS
                     if filter_length <= int(length):
+
                         if ok_print:
                             if not silent: 
+                                # print the results in terminal with printout function
                                 printout(url=url,status_code=req_stcode,ip=ipaddr,asn=asn,page_length=length,page_headers=req_headers)
                             else: 
+                                # print only the url with the write function in the sys library.
                                 sys.stdout.write(f"\x1b[K{url}\n")
                         
                         if output:
                             arg = str(output).split(":")
+                            # If the client sets the output option to advanced, saving the asn and ip too
                             if arg[1] == "advanced":
-                                results.append(f"{url:<37}[ Status: {req_stcode:<5} | Length: {length:<10} | IP: {ipaddr:<15} | asn: {asn:<5} ]")
+                                results.append(f"{url:<26}[ Status: {req_stcode:<5} | Length: {length:<10} | IP: {ipaddr:<15} | asn: {asn:<5} ]")
                             else:
+                                # If the client sets the output option to simple, only save the url
                                 results.append(str(url))
 
+        # make a thread with the ThreadPoolExecutor function.
         with ThreadPoolExecutor(max_workers=int(threads)) as executor:
             executor.map(run,subdomains,timeout=int(timeout))
-            
             while not br:
                 ls_time = time.time()
                 def sig(signal, frame):
@@ -125,7 +142,7 @@ def main(arguments):
                     if not len(results) == 0:
                         save(file_name=str(output).split(":")[0],results=results)
                     time.sleep(0.5)
-                    mes()
+                    closed_message()
                 signal.signal(signal.SIGINT, sig)
                 
                 if len(line) == len(subdomains):
@@ -139,7 +156,7 @@ def main(arguments):
         if COMPLETED:
             if not len(results) == 0:
                 save(file_name=str(output).split(":")[0],results=results)
-            killproc()
+            terminate_tool()
     
     except RuntimeError:
         pass
@@ -151,4 +168,4 @@ def main(arguments):
         if not len(results) == 0:
             save(file_name=str(output).split(":")[0],results=results)
         time.sleep(0.5)
-        mes()
+        closed_message()

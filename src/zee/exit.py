@@ -1,9 +1,14 @@
+# platform library used to obtain client distribution.
+# subprocess library for terminate tool in windows distribution.
+# os library for get tool pid and terminate tool in linux distribution.
+# colorama library for text coloring.
 from platform import system
 from subprocess import getoutput
 from os import getpid,kill
 from colorama import Fore
 
-def killproc():
+# terminate_tool function to terminate the tool with a given pid.
+def terminate_tool():
     opt = system().lower()
     pid = getpid()
     if opt == "windows":
@@ -13,6 +18,7 @@ def killproc():
     else:
         kill(pid,9)
 
-def mes():
+# show the warning message  with the close_message function, then terminate the tool with the terminate_tool function.
+def closed_message():
     print(Fore.RED+"\n\nPROGRAM HAS BEEN CLOSED")
-    killproc()
+    terminate_tool()

@@ -1,3 +1,12 @@
+# In this section, we will handle the user cli
+
+# os library for systematic commands and file existence checks
+# io library provides Python’s main facilities for dealing with various types of I/O
+# json library for json objects
+# sys library for exit function
+# platform library used to obtain client distribution
+# colorama library for text coloring
+# configparser for reading the .ini files data
 import sys,os,io,email,json,platform
 from colorama import Fore
 from .main import main
@@ -6,6 +15,7 @@ from configparser import ConfigParser,NoOptionError
 
 def check(word_list,url,config_file,heads,status,http_method,timeout,length,thread,silent,colorize,output):
 
+    # default tool variables
     word_list_len = ""
     filtered_status = []
     args = {"wordlist":word_list,
@@ -107,6 +117,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                 except ValueError:
                     pass
 
+                # SET FILTERED CODES
                 try:
                     data = (read_config.get(section,"filter_status"))
                     if not data == "":
@@ -132,7 +143,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                 except ValueError:
                     pass
 
-                # DONT COLORIZE THE RESULTS
+                # DONT COLORIZE THE TERMINAL
                 try:
                     data = (read_config.getboolean(section,"dont_colorize"))
                     if not data == "":
@@ -143,7 +154,8 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                     pass
                 except ValueError:
                     pass
-
+                
+                # SAVE RESULTS
                 try:
                     data = (read_config.get(section,"output"))
                     if not data == "":
@@ -154,10 +166,11 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                     pass
                 except ValueError:
                     pass
+
             except RuntimeError:
                 pass
 
-    # CHECK THE SUBDOMAINS FILE
+    # CHECK THE WORDLIST FILE
     if word_list:
         subdomains = []
         if (os.path.exists(word_list)):
@@ -176,7 +189,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
             for ex_subs in subdomains_file:
                 subdomains.append(str(url).replace("zee",ex_subs).replace("ZEE",ex_subs))
             args.update({'wordlist':subdomains})
-        else:sys.exit(Fore.RED+"\n\n[ERROR] PLEASE PROVIDE SUBDOMAINS BECAUSE seclist-20000.txt FILE IS DELETED")
+        else:sys.exit(Fore.RED+"\n\n[ERROR] PLEASE PROVIDE SUBDOMAINS BECAUSE DEFAULT WORDLIST ( seclist-20000.txt ) FILE IS MISSING")
 
 
     # Check if the client set the headers 
@@ -206,7 +219,9 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
         elif opt == "linux":
             os.system("clear")
         else:
-            os.system("clear")    
+            os.system("clear")
+    
+        # run the main functoin in banner file
         banner.main(url,word_list,word_list_len,args["http_method"],args["filter_status"],args['timeout'],args["filter_length"],args["threads"],args["colorize"])
     
     main(args)

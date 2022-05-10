@@ -1,10 +1,15 @@
+# colorama library for text coloring.
+# os library for file existence checks.
 from colorama import Fore;import os
+
 def save(file_name,results):
+    # check if file exists
     if not os.path.exists(str(file_name)):
         res_path = open(file_name,"w")
         for last in results:
             res_path.write(str(last)+"\n")
     else:
+        # ask question for saving file
         question = input(f"\n{Fore.RED}[ERROR] CAN'T SAVE RESULTS\n{Fore.YELLOW}THIS FILE ( {file_name} ) EXISTS DO YOU WANT TO REWRITE IT OR CHANGE FILE NAME OR SKIP SAVING ( Y / C / S ) :> ")
         if question == "y" or question == "Y":
             res_path = open(file_name,"w")
