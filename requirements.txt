@@ -1,5 +1,4 @@
 urllib3
 requests
 colorama
-tldextract
 beautifulsoup4

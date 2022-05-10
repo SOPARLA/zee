@@ -1,10 +1,5 @@
 from colorama import Fore
 
-try:
-    from tldextract import extract
-except ModuleNotFoundError:
-    exit("\033[91m\n[ERROR] MODULE NOT FOUND\nPLEASE INSTALL tldextract MODULE\n\teg. pip install tldextract\n")
-
 def banner():
     print()
     print(Fore.LIGHTMAGENTA_EX+r"""__/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\\\\_        
@@ -30,8 +25,6 @@ def ncbanner():
        __/\\\\\\\\\\\\\\\_\/\\\\\\\\\\\\\\\_\/\\\\\\\\\\\\\\\_ 
         _\///////////////__\///////////////__\///////////////__"""+f"\n\n\t\tVersion 1.0 ")
 def main(TARGET,wordlist,wordlist_len,http_method,status_code,tout,length,thread_count,dont_colorize):
-    ex = extract(TARGET)
-    TARGET = f"{ex.domain}.{ex.suffix}"
     if dont_colorize:
         ncbanner()
         print(f"\n   [*] TARGET\t\t : {TARGET}\n   [*] THREADS\t\t : {thread_count}\n   [*] TIMEOUT\t\t : {tout}\n   [*] WORDLIST\t\t : {wordlist}\n   [*] SUBDOMAINS\t : {wordlist_len}\n   [*] FILTERD CODES\t : {status_code}\n   [*] FILTERD LENGTH\t : {length}\n   [*] REQUEST METHOD\t : {http_method}\n\n")
