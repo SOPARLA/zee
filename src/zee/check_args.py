@@ -15,7 +15,7 @@ from configparser import ConfigParser,NoOptionError
 
 def check(word_list,url,config_file,heads,status,http_method,timeout,length,thread,silent,colorize,output):
 
-    # default tool variables
+    # default  variables
     word_list_len = ""
     filtered_status = []
     args = {"wordlist":word_list,
