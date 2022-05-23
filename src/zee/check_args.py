@@ -18,7 +18,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
     # default  variables
     word_list_len = ""
     filtered_status = []
-    args = {"wordlist":word_list,
+    args = {"wordlist":"src/utils/wordlists/seclist-20000.txt",
             "timeout":timeout,
             "threads":thread,
             "headers":{"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"  ,"Accept-Language": "*","Accept-Encoding": "*","Accept":"text/html","Referer":"https://www.google.com"},
@@ -131,7 +131,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                 except ValueError:
                     pass
                 
-                # SILENT OUTPUT ONLY SHOW THE REUSLTS
+                # SHOW ONLY THE FOUNDED SUBDOMAINS WITH SILENT OUTPUT
                 try:
                     data = (read_config.getboolean(section,"silent"))
                     if not data == "":
@@ -171,7 +171,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                 pass
 
     # CHECK THE WORDLIST FILE
-    if word_list:
+    if not word_list == "def":
         subdomains = []
         if (os.path.exists(word_list)):
             subdomains_file = open(word_list,"r").read().splitlines()

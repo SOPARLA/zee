@@ -22,7 +22,7 @@ def get_args():
     # -u arg ( Specify the target url for subdomain enumeration. ) eg. -u https://zee.domain.com
     tl_com.add_argument("-u",type=str,dest="URL",help="TARGET URL eg. -u https://ZEE.domain.com/ | https://ZEE.subdomain.domain.com/\n( PLEASE PUT ZEE IN THE PART THAT YOU WANT TO BRUTE FORCE )\n\n")
     # -w arg ( Specify the wordlist for subdomain enumeration. default set to ( seclist-20000 ) ) eg. -w subdomains.txt
-    tl_com.add_argument("-w",dest="wordlist",default="src/utils/wordlists/seclist-20000.txt",help="WORDLIST PATH eg. -w path/subdomains.txt ( DEFAULT: SECLIST-20000 )")
+    tl_com.add_argument("-w",dest="wordlist",default="def",help="WORDLIST PATH eg. -w path/subdomains.txt ( DEFAULT: SECLIST-20000 )")
     # -t arg ( Concurrent number run. default set to ( 20 ) eg. -t 100 )
     tl_com.add_argument("-t",default=20,type=int,dest="thread",help="NUMBER OF THREADS ( DEFAULT: 20 )")
     # -config arg ( Run the tool with the config file. eg. -config conf.ini )
