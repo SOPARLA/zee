@@ -1,0 +1,8 @@
+urllib3
+argparse
+psycopg2
+requests
+colorama
+tldextract
+configparser
+beautifulsoup4
