@@ -1,5 +1,5 @@
 <h2>ZEE IS A PYTHON WRITTEN SUBDOMAIN ENUMERATION TOOL</h2>
-<img width="900" alt="banner" src="src/wrapper/STATIC/ZEE.png">
+<img width="900" alt="banner" src="src/wrapper/STATIC/zee.png">
 
 <p align="center">
     <img src="https://img.shields.io/badge/WRITTEN%20IN-PYTHON-blue">
