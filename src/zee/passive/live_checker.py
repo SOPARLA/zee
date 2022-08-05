@@ -92,7 +92,7 @@ def live(urls,fstatus,flength,thread,output,domain):
                     results.append({"subdomain":TARGET,"status_code":status_code,"length":res_length,"ip":target_ip})
         
 
-    with ThreadPoolExecutor(max_workers=int(thread)) as executor:
+    with ThreadPoolExecutor(max_workers=int(thread)-8) as executor:
         executor.map(main,urls)
     
     if len(results) > 0:

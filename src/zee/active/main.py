@@ -141,7 +141,7 @@ def main(arguments):
                                     results.append(str(domain))
 
         # make a thread with the ThreadPoolExecutor function.
-        with ThreadPoolExecutor(max_workers=int(threads)) as executor:
+        with ThreadPoolExecutor(max_workers=int(threads)-8) as executor:
             executor.map(run,subdomains,timeout=int(timeout))
 
             while not br:

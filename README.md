@@ -3,7 +3,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/WRITTEN%20IN-PYTHON-blue">
-    <img src="https://img.shields.io/badge/VERSION-2.0-orange">
+    <img src="https://img.shields.io/badge/VERSION-1.0-orange">
     <a href="mailto:bosshbz84@gmail.com"><img src="https://img.shields.io/badge/EMAIL-white?logo=gmail"></a>
 </p>
 

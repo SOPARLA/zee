@@ -59,7 +59,7 @@ def send_request(TARGET,workers,apis,verb):
         true_subdomains = 0
 
     # RUN TOOL
-    with ThreadPoolExecutor(max_workers=int(workers)) as executor:
+    with ThreadPoolExecutor(max_workers=int(workers)-8) as executor:
         executor.map(run,requests)
     
     return subdomains
