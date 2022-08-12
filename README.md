@@ -69,7 +69,7 @@
 
 ### REQUIREMENTS
 
-```
+```console
 python 3 or higher
 ```
 
