@@ -9,10 +9,10 @@ def run_bufferover(*args):
 
     def ex_data(data):
         for ex_subs in data:
-            domain = str(ex_subs.split(",")[1]).rstrip()
-            if not domain == TARGET:
-                if not domain in res and domain.lower().endswith(str(TARGET).lower()):
-                    res.append(domain)
+            subDomain = str(ex_subs.split(",")[1]).rstrip()
+            if not subDomain == TARGET:
+                if not subDomain in res and subDomain.lower().endswith(str(TARGET).lower()):
+                    res.append(subDomain)
 
     bufferover_req = requests.get(f"https://dns.bufferover.run/dns?q=.{TARGET}",headers=head).text
     fdns = json.loads(bufferover_req)['FDNS_A']

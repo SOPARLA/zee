@@ -7,7 +7,7 @@ from os import getpid,kill
 
 # terminate_tool function to terminate the tool with a given pid.
 def terminate_tool():
-    print("\n")
+    print()
     opt = system().lower()
     pid = getpid()
     if opt == "windows":

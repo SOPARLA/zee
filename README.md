@@ -41,13 +41,14 @@
 		 - EASY TO USE
 		 - 16 SOURCE FOR SUBDOMAIN COLLECTION
 
-### API
+### API 
 |SOURCE|API TYPE|
 |:---|:---:|
 |[alienvault](https://otx.alienvault.com)|NONE|
+|[ask](https://www.ask.com)|NONE|
 |[binaryedge](https://binaryedge.io/)|API KEY|
-|[bufferover](https://dns.bufferover.run)|NONE|
 |[censys](https://censys.io)|ID & SECRET|
+|[certificate details](https://certificatedetails.com)|NONE|
 |[certspotter](https://sslmate.com/certspotter/)|NONE|
 |[crtsh](https://crt.sh)|NONE|
 |[crtshdb](#)|NONE|

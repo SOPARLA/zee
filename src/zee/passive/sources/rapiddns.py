@@ -16,7 +16,7 @@ def run_rapiddns(*args):
         
         if domain == "Domain":
             continue
- 
+
         else:
             if not str(domain) == TARGET:
                 if not str(domain) in res and str(domain).lower().endswith(str(TARGET).lower()):

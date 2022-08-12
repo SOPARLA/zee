@@ -13,28 +13,20 @@ def run_alienvault(*args):
             if not domain == TARGET:
                 if not domain in res and domain.lower().endswith(str(TARGET).lower()):
                     res.append(domain)
-
-    try: 
-
-        alienvault_req = requests.get(f"https://otx.alienvault.com/api/v1/indicators/domain/{TARGET}/passive_dns",headers=head).text
+    
+    def get_subs(domain):
+        alienvault_req = requests.get(f"https://otx.alienvault.com/api/v1/indicators/domain/{domain}/passive_dns",headers=head).text
         alienvault_json_content = json.loads(alienvault_req)['passive_dns']
         
         if alienvault_json_content:
             ex_data(alienvault_json_content)
-        
         else:
             return ["alienvault",[]]
-    
+
+    try:
+        get_subs(TARGET)
     except json.decoder.JSONDecodeError:
-
         import time;time.sleep(3)
-        alienvault_req = requests.get(f"https://otx.alienvault.com/api/v1/indicators/domain/{TARGET}/passive_dns",headers=head).text
-        alienvault_json_content = json.loads(alienvault_req)['passive_dns']
-        
-        if alienvault_json_content:
-            ex_data(alienvault_json_content)
-        else:
-            return ["alienvault",[]]
-    
-    else:
-        return ["alienvault",res]
+        get_subs(TARGET)
+
+    return ["alienvault",res]
