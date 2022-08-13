@@ -39,7 +39,7 @@
 	- PASSIVE
 		 - FAST
 		 - EASY TO USE
-		 - 17 SOURCE FOR SUBDOMAIN COLLECTION
+		 - 19 SOURCE FOR SUBDOMAIN COLLECTION
 
 ### API 
 |SOURCE|API TYPE|
@@ -55,11 +55,13 @@
 |[fullhunt](https://fullhunt.io)|API KEY|
 |[hackertarget](https://hackertarget.com/)|NONE|
 |[jldc](https://jldc.me)|NONE|
+|[jonlu](https://jonlu.ca)|NONE|
 |[sonar](https://sonar.omnisint.io)|NONE|
 |[passivetotal](https://community.riskiq.com/)|USERNAME & PASSWORD|
 |[rappiddns](https://rapiddns.io)|NONE|
 |[securitytrails](https://securitytrails.com/)|API KEY|
 |[spamhaustech](https://spamhaustech.com)|USERNAME & PASSWORD|
+|[threatminer](https://threatminer.org)|NONE|
 |[virustotal](https://virustotal.com)|API KEY|
 
 <br>

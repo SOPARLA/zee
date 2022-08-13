@@ -10,9 +10,11 @@ from .crtshdb import *
 from .fullhunt import *
 from .hackertarget import *
 from .jldc import *
+from .jonlu import *
 from .omnisint import *
 from .passivetotal import *
 from .rapiddns import *
 from .securitytrails import *
 from .spamhaustech import *
+from .threatminer import *
 from .virustotal import *

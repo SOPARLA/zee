@@ -13,6 +13,7 @@ def send_request(TARGET,workers,apis,verb):
     # SUBDOMAIN FINDERS functionS
     requests = [
             run_jldc,
+            run_jonlu,
             run_crtsh,
             run_censys,
             run_crtshdb,
@@ -24,6 +25,7 @@ def send_request(TARGET,workers,apis,verb):
             run_alienvault,
             run_virustotal,
             run_certspotter,
+            run_threatminer,
             run_certdetails,
             run_spamhaustech,
             run_hackertarget,
