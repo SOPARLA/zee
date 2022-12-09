@@ -109,7 +109,7 @@ def check(url_list,url,config_file,threads,cl,fstatus,flength,silent,colorize,ou
                 except ValueError:
                     pass
                 
-                # SHOW ONLY THE FOUNDED SUBDOMAINS WITH SILENT OUTPUT
+                # SHOW ONLY THE FINDED SUBDOMAINS WITH SILENT OUTPUT
                 try:
                     data = (read_config.getboolean(section,"silent"))
                     if not data == "":

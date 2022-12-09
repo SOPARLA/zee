@@ -16,5 +16,4 @@ from .passivetotal import *
 from .rapiddns import *
 from .securitytrails import *
 from .spamhaustech import *
-from .threatminer import *
 from .virustotal import *

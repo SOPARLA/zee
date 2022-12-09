@@ -25,7 +25,6 @@ def send_request(TARGET,workers,apis,verb):
             run_alienvault,
             run_virustotal,
             run_certspotter,
-            run_threatminer,
             run_certdetails,
             run_spamhaustech,
             run_hackertarget,
@@ -39,7 +38,7 @@ def send_request(TARGET,workers,apis,verb):
         func_res = func(str(TARGET),apis)
         # GET THE SOURCE NAME
         name = str(func_res[0]).rstrip()
-        # GET THE LENGTH OF THE FOUNDED SUBDOMAINS
+        # GET THE LENGTH OF THE FINDED SUBDOMAINS
         true_subdomains = len(subdomains)
 
         # IF RETURNED RESULT EQUELS TO ERROR SHOW ERROR MESSAGE

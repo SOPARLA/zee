@@ -9,8 +9,8 @@ def start():
         # tldextract is used to extract the urls section.
         import tldextract
     except ModuleNotFoundError:
-        exit("\033[91m\n[ERROR] MODULE NOT FOUND\n{Fore.YELLOW}PLEASE INSTALL tldextract {Fore.YELLOW}MODULE\n\tpip install tldextract or pip install -r requirements.txt\n")
-    
+        exit(f"{Fore.RED}[ERROR] MODULE NOT FOUND\n{Fore.YELLOW}PLEASE INSTALL {Fore.GREEN}tldextract {Fore.YELLOW}MODULE\n\t{Fore.WHITE}pip install tldextract{Fore.RED} or {Fore.WHITE}pip install -r requirements.txt\n")
+
     try:
         # urllib3 for disable urllib3 warnings 
         import urllib3

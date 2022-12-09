@@ -19,14 +19,8 @@ def run_hackertarget(*args):
 
     try:
 
-        payload = {"UrlBox" : f"https://api.hackertarget.com/hostsearch/?q={TARGET}","AgentList" : "Google Chrome","MethodList" : "GET"}
-        hackertarget_req = requests.post("https://www.httpdebugger.com/Tools/ViewHttpHeaders.aspx" , payload).text
-        
-        soup = BeautifulSoup(hackertarget_req,"html.parser") 
-        soup_text = soup.find("div" ,  id="ResultData").text
-        soup_res = soup_text.replace("Response Content","")
-        
-        ex_data(soup_res)
+        hackertarget_req = requests.get(f"https://api.hackertarget.com/hostsearch/?q={TARGET}").text
+        ex_data(hackertarget_req)
 
     except:
         return ["hackertarget",[]]

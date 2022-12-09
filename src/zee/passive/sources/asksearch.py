@@ -19,12 +19,12 @@ def run_asksearch(*args):
                 if tldextract.extract(TARGET).domain ==  domain_name and  not full_domain in res:
                     res.append(full_domain)
     try:
-        ask_req = requests.get(f"https://www.ask.com/web?o=0&l=dir&ad=dirN&q=site:*.{TARGET}+-www").text
+        ask_req = requests.get(f"https://www.ask.com/web?o=0&l=dir&ad=dirN&q=site:*.{TARGET}").text
         ex_data(ask_req)
     except:
         try:
             import time;time.sleep(3)
-            ask_req = requests.get(f"https://www.ask.com/web?o=0&l=dir&ad=dirN&q=site:*.{TARGET}+-www").text
+            ask_req = requests.get(f"https://www.ask.com/web?o=0&l=dir&ad=dirN&q=site:*.{TARGET}").text
             ex_data(ask_req)
         except Exception as er:
             return ["asksearch",er,"ERROR"]

@@ -22,6 +22,17 @@ def main(arguments,apis):
     verb = arguments['verbose_mode']
 
 
+    # This function will sanitize the funded domain
+    def d_check(main_domain: str,finded_domain: str): 
+        if len(finded_domain):
+            finded_domain = finded_domain.replace("\n","")
+        
+        if not finded_domain == main_domain:
+            return finded_domain
+        else:
+            return ""
+
+
     try:
         # This function will detect CTRL+C
         def sig(signal, frame):
@@ -42,15 +53,15 @@ def main(arguments,apis):
                 live(data,filter_status,filter_length,thread,output,url)
 
             else:
-                if not silent:
-                    print()
 
-                for last in data:
-                    if ok_print:
-                        print(last)
+                if ok_print:
+                    if not silent:
+                        print()
 
-                if not silent:
-                    print()
+                    for last in data:
+                        check = d_check(url,last)
+                        if check:
+                            print(check)
 
                 if output:
                     save(output,data,url)
@@ -70,14 +81,15 @@ def main(arguments,apis):
                     live(data,filter_status,filter_length,thread,output,ex_urls)
                 
                 else:
-                    if not silent:
-                        print()
 
-                    for last in data:
-                        if ok_print:
-                            print(last)
-                    if not silent:
-                        print()
+                    if ok_print:
+                        if not silent:
+                            print()
+
+                        for last in data:
+                            check = d_check(ex_urls,last)
+                            if check:
+                                print(check)
 
                 if output:
                     save(output,data,ex_urls)

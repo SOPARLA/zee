@@ -134,7 +134,7 @@ def check(word_list,url,config_file,heads,status,http_method,timeout,length,thre
                 except ValueError:
                     pass
                 
-                # SHOW ONLY THE FOUNDED SUBDOMAINS WITH SILENT OUTPUT
+                # SHOW ONLY THE FINDED SUBDOMAINS WITH SILENT OUTPUT
                 try:
                     data = (read_config.getboolean(section,"silent"))
                     if not data == "":
